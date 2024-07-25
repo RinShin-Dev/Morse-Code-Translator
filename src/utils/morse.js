@@ -9,6 +9,11 @@ const morseList = {
     '_': '..--.-', '"': '.-..-.', '$': '...-..-', '@': '.--.-.', ' ': '/'
 }
 
+/**
+ * This function use to convert text to morse code
+ * @param {string} text 
+ * @returns
+ */
 export function encode(text) {
     const upperCaseText = text.toUpperCase()
     const result = []
@@ -20,7 +25,7 @@ export function encode(text) {
 
 /**
  * This function use to convert morse code to text.
- * @param {string} morse just input
+ * @param {string} morse
  * @returns 
  */
 export function decode(morse) {
