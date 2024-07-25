@@ -30,9 +30,7 @@ export function encode(text) {
  */
 export function decode(morse) {
     const morses = morse.split(' ')
-    console.log(morse);
     let result = ''
-
 
     for (const m of morses) {
         result += Object.keys(morseList).find(key => morseList[key] === m) || ''
