@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 import { encode, decode } from '../utils/morse.js'
 
-const mode = ref('encode','decode')
+const mode = ref('encode')
 const input = ref('')
 const output = computed(() => {
   //TODO: Implement the morse code translation
