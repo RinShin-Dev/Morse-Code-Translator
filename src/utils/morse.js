@@ -11,15 +11,27 @@ const morseList = {
 
 export function encode(text) {
     const upperCaseText = text.toUpperCase()
-    // let result = ''
     const result = []
     for (const c of upperCaseText) {
-        // result += morseList[c] + ' '
         result.push(morseList[c])
     }
     return result.join(' ')
 }
 
-function decode(morse) {
+/**
+ * This function use to convert morse code to text.
+ * @param {string} morse just input
+ * @returns 
+ */
+export function decode(morse) {
+    const morses = morse.split(' ')
+    console.log(morse);
+    let result = ''
 
+
+    for (const m of morses) {
+        result += Object.keys(morseList).find(key => morseList[key] === m) || ''
+    }
+
+    return result
 }
