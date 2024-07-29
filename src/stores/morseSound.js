@@ -3,7 +3,7 @@ import SoundController from '@/utils/classes/SoundController'
 import { ref, watch } from 'vue'
 
 export const useMorseSound = defineStore('morseSound', () => {
-  const soundController = new SoundController()
+  let soundController = null
   const currentSfxVolume = ref(50)
   const muted = ref(false)
 
@@ -19,6 +19,9 @@ export const useMorseSound = defineStore('morseSound', () => {
    * Play a short beep sound.
    */
   function shortBeep() {
+    if (!soundController) {
+      soundController = new SoundController()
+    }
     soundController.playSFX('/sounds/shortBeep.wav')
   }
 
@@ -26,6 +29,9 @@ export const useMorseSound = defineStore('morseSound', () => {
    * Play a long beep sound.
    */
   function longBeep() {
+    if (!soundController) {
+      soundController = new SoundController()
+    }
     soundController.playSFX('/sounds/longBeep.wav')
   }
 
@@ -33,6 +39,9 @@ export const useMorseSound = defineStore('morseSound', () => {
    * Play a key press sound.
    */
   function keyPress() {
+    if (!soundController) {
+      soundController = new SoundController()
+    }
     soundController.playSFX('/sounds/keyPress.wav')
   }
 
