@@ -27,16 +27,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    :style="{ width: size, height: size }"
-    class="grid place-items-center"
-  >
-    <div
-      v-html="icon"
-      :style="{
-        color,
-        transform: `scale(${scale})`
-      }"
-    ></div>
+  <div :style="{ width: size, height: size }" class="grid place-items-center">
+    <div v-html="icon" :style="{
+      color,
+      transform: `scale(${scale})`
+    }"></div>
   </div>
 </template>
